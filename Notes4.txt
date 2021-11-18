@@ -1,0 +1,15 @@
+
+
+npm init
+
+  to create node app
+  
+npm install bootstrap
+
+npm install jquery
+
+npm install --save-dev chai
+
+npm login
+
+npm publish

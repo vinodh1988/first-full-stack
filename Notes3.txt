@@ -1,0 +1,57 @@
+
+a node js project is usually referred to as node module or node package.
+
+The libraries, tools that is needed for node js development are available to you as node modules
+
+
+Libraries
+---------
+
+      
+	  Libraries always need to be in the local scope of the project
+	  
+	  libraries are further classified into two kinds
+	  
+	  Development
+	    
+		 Testing -unit/integration
+	     Linting - code quality
+	     Typescript - 
+		 
+		 Development dependencies
+	  
+	  Development and production
+	      
+		  angular -dev+production
+		  jquery - dev+production
+		  express - dev+production
+	  
+	  
+	  befor npm 5:
+	     
+		 npm install --save <libraryname>
+	 
+	  now
+	  
+	     npm install  <libraryname>
+		 
+	  Development dependencies
+	  
+	     npm install --save-dev libname
+		 
+		 
+	  
+	  
+	  
+Tools
+-----
+        transpilers, compilers, test runners, bundling tools, linting tools , task runners
+		, watch tools,
+		
+		These tools are usually command line utilities
+		
+		usually these tools has to be installed in global scope
+		
+		npm install -g <toolname>
+		
+		

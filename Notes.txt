@@ -1,0 +1,36 @@
+
+Node JS
+-------
+
+
+Browser Javascript
+
+
+   Browser manipulation
+   Document manipulation
+   File upload and Download
+   
+                  not possible
+				  
+				    creating files on the disk
+					writing network related code
+					accessing os functionalitities
+					sending mails
+					connecting with databases which are outside browser
+ Node Javascript
+ 
+ 
+  Possible
+					
+		            creating files on the disk
+					writing network related code
+					accessing os functionalitities
+					sending mails
+					connecting with databases which are outside browser
+					
+  Not possible
+  
+                Browser manipulation
+                Document manipulation
+   
+				
