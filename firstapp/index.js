@@ -5,6 +5,9 @@ const express =  require("express")
 //allows resources in this path to be directly accesible
 app.use(express.static(path.join(__dirname, "public/scripts")))
 app.use(express.static(path.join(__dirname, "public/styles")))
+app.use(express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")))
+app.use(express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")))
+app.use(express.static(path.join(__dirname, "node_modules/jquery/dist")))
 
 app.get("/main",function(request,response){
     response.sendFile(path.join(__dirname, "public/pages/home.html"))
@@ -12,6 +15,7 @@ app.get("/main",function(request,response){
 app.get("/",function(request,response){
     response.send("NODE WEB APP IS RUNNING")
 })
+
 
  app.listen("9000",function(){
     console.log("Server is started @ 9000 port")
