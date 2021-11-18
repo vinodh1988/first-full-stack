@@ -1,17 +1,10 @@
+ const express =  require("express")
+ const app = express()
 
-const fs=require("fs")
-const current=require('./second')
-
-fs.readFile("package.json","utf-8",function(err,data){
-    if(err) 
-       console.log("file cannot be read")
-    else
-      console.log(data)
+app.get("/",function(request,response){
+    response.send("NODE WEB APP IS RUNNING")
 })
 
-current.today()
-console.log(current.things.fruits)
-new current.Item(24,35).display()
-current.execute()
-
-console.log("Independent logic >>>>>>>>>>>>>>>>>")
+ app.listen("9000",function(){
+    console.log("Server is started @ 9000 port")
+ })

@@ -1,0 +1,37 @@
+
+
+Web application
+
+
+     Browser -makes request
+	 
+	 Server side code - produces response
+	 
+	 
+	 but how request reaches server and gets processed by server side code????
+	 
+	 
+	    Server side executes and produce response that is understandable by the browser
+		
+		for example
+		
+		asp.net upon execution in server produces html,css and js   -- iis
+		
+		php upon execution responds with html ,css and js  - apache
+		
+		servlet and jsp upon execution responds with html,css and js  - tomcat,jboss
+		
+		
+		http://hostname:port/resource
+		
+    Monolithic Architecture
+	
+	
+	Microservice Architecture
+	
+	
+	 we dont deploy our application in web/application servers
+	 
+	 the code is not dependent on any external software
+	 
+	 the app/service is stand alone [it runs of its own and process requests of its own]
