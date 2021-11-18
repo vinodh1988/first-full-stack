@@ -1,0 +1,40 @@
+node js has some inbuilt libraries
+
+node js has some global variables
+
+Node js is single threaded , asynchronous and non-blocking
+
+
+
+    synchronous and blocking
+	
+	        a=readFile("x.text"); //read data from files
+			                      //control will stay in the same line until file is read
+								  
+		t1- 	line2
+			line3
+			line4   [dependent on variable a]
+		-----------------------------------------------------------------------------------	
+			line5 
+		t2-	line6
+			line7  [not dependent on variable a]
+			
+	
+	 Asyncronous and non blocking
+	 
+	 
+	    a=readFile("x.text");//read data from files
+			                 //control will not stay in the same line
+							 
+							 
+			line2
+			line3
+			line4   [dependent on variable a]  [will keep it in callback will only execute when
+			file is read]
+		-----------------------------------------------------------------------------------	
+			line5 
+		    line6
+			line7  [not dependent on variable a]
+			 [execute immediatly after line]
+			
+								  
