@@ -14,4 +14,17 @@ route.get("/people",function(request,response){
    })
 })
 
+route.post("/people",function(request,response){
+   
+   const {sno,name,city}=request.body
+   ops.addPerson(sno,name,city,function(err,data){
+       if(err){
+           response.status(500).send("Unable to insert")
+       }
+       else{
+            response.status(201).send(request.body)
+       }
+   })
+})
+
 module.exports=route;
