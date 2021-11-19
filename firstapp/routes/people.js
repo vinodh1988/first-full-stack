@@ -27,4 +27,14 @@ route.post("/people",function(request,response){
    })
 })
 
+
+route.get("/people/:sno",function(request,response){
+  ops.getOne(request.params.sno,function(err,data){
+    if(err){
+        response.status(500).send("Server error")
+    }
+    else
+        response.send(data[0]?data[0]:"No Record Found")
+  })
+})
 module.exports=route;
