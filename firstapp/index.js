@@ -3,6 +3,8 @@ const express =  require("express")
 const ops=require("./db/dbops")
  const app = express()
  const path = require("path")
+ const people = require("./routes/people")
+
 //allows resources in this path to be directly accesible
 app.use(express.static(path.join(__dirname, "public/scripts")))
 app.use(express.static(path.join(__dirname, "public/styles")))
@@ -12,6 +14,8 @@ app.use(express.static(path.join(__dirname, "node_modules/jquery/dist")))
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
+
+app.use("/api",people)
 
 app.set('views', path.join(__dirname, 'public/views'));//setting the path of template files
 app.set('view engine', 'pug'); //configuring view Engine
