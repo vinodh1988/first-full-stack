@@ -13,6 +13,10 @@ app.use(express.static(path.join(__dirname, "node_modules/jquery/dist")))
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
+app.set('views', path.join(__dirname, 'public/views'));//setting the path of template files
+app.set('view engine', 'pug'); //configuring view Engine
+
+
 app.get("/main",function(request,response){
     response.sendFile(path.join(__dirname, "public/pages/home.html"))
 })
@@ -20,6 +24,17 @@ app.get("/",function(request,response){
     response.send("NODE WEB APP IS RUNNING")
 })
 
+app.get("/people-page",function(request,response){
+    ops.getPeople(function(err,data){
+        if(err){
+            response.send("No DATA")
+        }
+        else
+        {
+            response.render("people",{people:data})
+        }
+    })
+})
 app.post("/store",function(request,response){
     let {sno,name,city}=request.body;
 
