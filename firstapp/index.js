@@ -1,5 +1,6 @@
  
 const express =  require("express")
+const ops=require("./db/dbops")
  const app = express()
  const path = require("path")
 //allows resources in this path to be directly accesible
@@ -20,7 +21,14 @@ app.get("/",function(request,response){
 })
 
 app.post("/store",function(request,response){
-    console.log(request.body);
+    let {sno,name,city}=request.body;
+
+    ops.addPerson(sno,name,city,function(err,data){
+        if(err)
+           response.status(500).send("Not able to insert person");
+        else
+           response.sendFile(path.join(__dirname, "public/pages/home.html"));
+    })
 })
 
  app.listen("9000",function(){
