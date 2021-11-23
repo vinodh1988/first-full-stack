@@ -16,4 +16,17 @@ route.post("/signup",async (request,response)=>{
 
 })
 
+route.post("/signin",async (request,response)=>{
+    
+    const {username,password}=request.body
+    const originalPassword=await ops.getPassword(username)
+    const result = await security.compare(password,originalPassword)
+    if(result==true)
+        response.send("user is valid")
+    else
+        response.status(500).send("Not valid")
+  //  const encrypted=await security.encrypt(password)
+   
+
+})
 module.exports=route;
