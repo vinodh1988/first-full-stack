@@ -12,6 +12,9 @@ const dbops= {
     },
     updateOne :function(sno,name,city,callback){
         db.query("update person set name=?,city=? where sno=?",[name,city,sno],callback)
+    },
+    createUser:function(username,password,callback){
+        db.query("insert into users values(?,?) ",[username,password],callback)
     }
 }
 
