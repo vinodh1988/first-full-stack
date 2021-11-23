@@ -2,6 +2,7 @@ var express=require("express")
 var route = express.Router();
 var ops=require("../db/dbops")
 var security=require('../security/security')
+const jwt=require("jsonwebtoken");
 
 route.post("/signup",async (request,response)=>{
     
@@ -21,8 +22,10 @@ route.post("/signin",async (request,response)=>{
     const {username,password}=request.body
     const originalPassword=await ops.getPassword(username)
     const result = await security.compare(password,originalPassword)
-    if(result==true)
-        response.send("user is valid")
+    if(result==true){
+        let token=jwt.sign({username:username,password:originalPassword},"express-secret-key")
+        response.json({status:"success",access_token:token})
+    }
     else
         response.status(500).send("Not valid")
   //  const encrypted=await security.encrypt(password)
