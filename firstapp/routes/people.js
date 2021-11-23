@@ -1,8 +1,10 @@
 var express=require("express")
 var route = express.Router();
 var ops=require("../db/dbops")
+const passport=require("passport")
+require('../security/passportfun')(passport)
 
-route.get("/people",function(request,response){
+route.get("/people",passport.authenticate('jwt',{session:false}),function (request,response){
    ops.getPeople(function(err,data){
        if(err){
            response.status(500).send("Server issue")

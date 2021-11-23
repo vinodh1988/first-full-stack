@@ -7,16 +7,11 @@ const ops=require("./db/dbops")
  const user = require("./routes/user")
  const passport=require("passport")
  
+ 
 app.use(passport.initialize());
 
-app.use(function(req,res,next){
-    console.log(req.url,' is the base')
 
-    if(req.isAuthenticated() || req.url=="/user/signin" || req.url=="/user/signup")
-      next()
-    else
-      res.sendStatus(401)
-})
+
 
 //allows resources in this path to be directly accesible
 app.use(express.static(path.join(__dirname, "public/scripts")))
